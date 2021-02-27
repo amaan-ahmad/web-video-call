@@ -24,8 +24,10 @@ app.get("/:room", (req, res)=>{
   })
 });
 
-app.listen(3000, () => {
-  console.log('server started');
-});
+io.on("connection", socket => {
+  socket.on("join-room", (roomID, userID)=>{
+    console.log(roomID, userID);
+  })
+})
 
 server.listen(SERVER_PORT);
