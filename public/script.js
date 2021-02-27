@@ -1,4 +1,3 @@
-const socket = io('/')
+const socket = io("/");
 
-
-socket.emit('join-room', (roomID, 10));
+socket.emit("join-room", ROOM_ID, 10);
